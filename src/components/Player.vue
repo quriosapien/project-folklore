@@ -1,6 +1,7 @@
 <template>
   <main class="player-container">
     <audio
+      id="player"
       :src="preview"
       controls >
       Your browser does not support the <code>audio</code> element.

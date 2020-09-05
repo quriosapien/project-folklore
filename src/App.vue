@@ -2,6 +2,7 @@
   <Navbar />
   <div id="body">
     <Player />
+    <Search />
   </div>
   <Footer />
 </template>
@@ -10,13 +11,15 @@
 import Footer from './components/Footer.vue'
 import Navbar from './components/Navbar.vue'
 import Player from './components/Player.vue'
+import Search from './components/Search.vue'
 
 export default {
   name: 'App',
   components: {
     Footer,
     Navbar,
-    Player
+    Player,
+    Search
   }
 }
 </script>
