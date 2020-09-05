@@ -1,0 +1,26 @@
+:root {
+  font-size: 16px;
+}
+html, body {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: limegreen;
+}
+
+body {
+  background-color: white;
+  max-height: 100vh;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+
+
