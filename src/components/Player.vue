@@ -14,7 +14,7 @@ export default {
   name: 'Player',
   data: function () {
     return {
-      preview: '/songs/gorgeous.webm'
+      preview: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview128/v4/30/72/5d/30725dee-2153-3b9c-c2a6-9f09ce648a86/mzaf_7109126722350920884.plus.aac.p.m4a'
     }
   }
 }
