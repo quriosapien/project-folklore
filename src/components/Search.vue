@@ -63,7 +63,7 @@ export default {
       debounce({
         id: DEBOUNCE_IDS.SEARCH,
         callback: () => {
-          fetch(`https://itunes.apple.com/search?term=${key}`)
+          fetch(`https://itunes.apple.com/search?term=${key}&media=music`)
             .then(res => res.json())
             .then(this.updateSearchResults)
         },
