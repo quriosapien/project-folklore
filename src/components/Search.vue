@@ -63,7 +63,7 @@ export default {
       debounce({
         id: DEBOUNCE_IDS.SEARCH,
         callback: () => {
-          fetch(`https://itunes.apple.com/search?term=${key}&media=music`)
+          fetch(`/api/search?term=${key}&limit=20`)
             .then(res => res.json())
             .then(this.updateSearchResults)
         },
@@ -84,5 +84,7 @@ export default {
 </script>
 
 <style>
-
+li {
+  cursor: pointer;
+}
 </style>
