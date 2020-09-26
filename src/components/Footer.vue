@@ -15,7 +15,7 @@ export default {
 .footer {
   height: 100px;
   padding: 20px 0px;
-  background-color: limegreen;
+  background-color: turquoise;
   &_heading {
     font-size: 1rem;
   }

@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 
 .navbar {
-  background-color: limegreen;
+  background-color: turquoise;
   color: black;
 
   height: 80px;

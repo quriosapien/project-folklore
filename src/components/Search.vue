@@ -101,8 +101,8 @@ export default {
 .searchbox {
   padding: 5px 8px;
   border-radius: 8px;
-  border: 2px solid limegreen;
-  box-shadow: 0px 0px 5px 2px lightgray;
+  border: 1px solid lightseagreen;
+  box-shadow: 0px 0px 5px 2px lightseagreen;
   width: 80%;
   max-width: 400px;
   &:focus {
@@ -117,7 +117,7 @@ export default {
   &-items {
     border-radius: 8px;
     box-shadow: 0px 0px 5px 2px lightgray;
-
+    background-color: rgba(230, 230, 230, 0.4);
     display: flex;
 
     cursor: pointer;
@@ -127,7 +127,7 @@ export default {
     font-size: 16px;
     &:hover {
       font-weight: bold;
-      background-color: green;
+      background-color: lightseagreen;
     }
     .artwork {
       margin-right: 20px;
