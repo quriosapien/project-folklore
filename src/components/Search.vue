@@ -113,6 +113,8 @@ export default {
 .search-results {
   list-style-type: none;
   padding: 5px;
+  max-width: 600px;
+  margin: 20px auto;
 
   &-items {
     border-radius: 8px;
@@ -124,7 +126,7 @@ export default {
     padding: 5px 10px;
     margin: 8px auto;
 
-    font-size: 16px;
+    font-size: 1rem;
     &:hover {
       font-weight: bold;
       background-color: lightseagreen;
@@ -140,7 +142,7 @@ export default {
       }
       .album, .artist {
         margin: 0px;
-        font-size: 14px;
+        font-size: 0.9rem;
       }
     }
   }
