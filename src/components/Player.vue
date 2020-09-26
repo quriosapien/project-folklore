@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style scoped>
-
+.player-container {
+  padding: 10px;
+}
 </style>
