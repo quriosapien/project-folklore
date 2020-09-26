@@ -5,15 +5,22 @@
     class="searchbox"
     placeholder="Search for any song ..."
     @input="newSearch">
-
-    <ul>
-      <li
-        v-for="(item, index) in result.songs"
-        :key="index"
-        @click="updateAudioTrack({ trackUrl: item.previewUrl})">
-        {{ item.trackName }}
-      </li>
-    </ul>
+  <ul class="search-results">
+    <li
+      v-for="(item, index) in result.songs"
+      class="search-results-items"
+      :key="index"
+      @click="updateAudioTrack({ trackUrl: item.previewUrl})">
+      <div class="artwork">
+        <img :src="item.artworkUrl60" :alt="item.artistName">
+      </div>
+      <div class="details">
+        <p class="trackname">{{ item.trackName }}</p>
+        <p class="album">Album: {{ item.collectionName }}</p>
+        <p class="artist">Artist: {{ item.artistName }}</p>
+      </div>
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -63,15 +70,22 @@ export default {
       debounce({
         id: DEBOUNCE_IDS.SEARCH,
         callback: () => {
-          fetch(`/api/search?term=${key}&limit=20`)
+          fetch(`/api/search?term=${key}`)
             .then(res => res.json())
-            .then(this.updateSearchResults)
+            .then(res => {
+              console.log(res)
+              this.updateSearchResults(res)
+            })
         },
         delay: 400
       })
     },
-    updateSearchResults ({ result: length, results: songs }) {
-      this.result = { length, songs: songs.slice(0, 10) }
+    updateSearchResults ({ results }) {
+      const songs = results.filter(x => x.kind === 'song')
+      this.result = {
+        length: songs.length,
+        songs
+      }
     },
     updateAudioTrack ({ trackUrl }) {
       const player = document.getElementById('player')
@@ -83,8 +97,52 @@ export default {
 }
 </script>
 
-<style>
-li {
-  cursor: pointer;
+<style lang="scss">
+.searchbox {
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 2px solid limegreen;
+  box-shadow: 0px 0px 5px 2px lightgray;
+  width: 80%;
+  max-width: 400px;
+  &:focus {
+    outline: none;
+  }
+}
+
+.search-results {
+  list-style-type: none;
+  padding: 5px;
+
+  &-items {
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px 2px lightgray;
+
+    display: flex;
+
+    cursor: pointer;
+    padding: 5px 10px;
+    margin: 8px auto;
+
+    font-size: 16px;
+    &:hover {
+      font-weight: bold;
+      background-color: green;
+    }
+    .artwork {
+      margin-right: 20px;
+    }
+    .details {
+      text-align: left;
+      .trackname {
+        margin: 0px;
+        font-weight: bold;
+      }
+      .album, .artist {
+        margin: 0px;
+        font-size: 14px;
+      }
+    }
+  }
 }
 </style>
