@@ -14,14 +14,19 @@ export default {
   name: 'Player',
   data: function () {
     return {
-      preview: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview128/v4/30/72/5d/30725dee-2153-3b9c-c2a6-9f09ce648a86/mzaf_7109126722350920884.plus.aac.p.m4a'
+      preview: 'https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview128/v4/9f/83/10/9f831043-233d-029e-fb94-bdb7e4a87a87/mzaf_7265467402807303851.plus.aac.p.m4a'
     }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .player-container {
   padding: 10px;
+  & > audio {
+    &:focus {
+      outline: none;
+    }
+  }
 }
 </style>

@@ -113,7 +113,7 @@ export default {
 .search-results {
   list-style-type: none;
   padding: 5px;
-  max-width: 600px;
+  max-width: 500px;
   margin: 20px auto;
 
   &-items {
