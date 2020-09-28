@@ -1,2 +1,4 @@
 # project-folklore
-Gaane sunne milenge Vue3+Vite ke project me.
+
+An AudioPlayer made using VueJS3 & Vite...
+Streams audio-previews of around 30seconds.
