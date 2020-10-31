@@ -30,9 +30,9 @@ const DEBOUNCE_IDS = {
 }
 
 function clearDebounce (id) {
-  if (waitList.id) {
-    clearTimeout(waitList.id)
-    delete waitList.id
+  if (waitList[id]) {
+    clearTimeout(waitList[id])
+    delete waitList[id]
   }
 }
 
