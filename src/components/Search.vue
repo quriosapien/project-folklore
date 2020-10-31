@@ -30,17 +30,17 @@ const DEBOUNCE_IDS = {
 }
 
 function clearDebounce (id) {
-  if (waitList.id) {
-    clearTimeout(waitList.id)
-    delete waitList.id
+  if (waitList[id]) {
+    clearTimeout(waitList[id])
+    delete waitList[id]
   }
 }
 
 function debounce ({ id, callback, delay = 400}) {
-  if (waitList.id) {
-    clearTimeout(waitList.id)
+  if (waitList[id]) {
+    clearTimeout(waitList[id])
   }
-  waitList.id = setTimeout(() => {
+  waitList[id] = setTimeout(() => {
     callback()
   }, delay)
 }
